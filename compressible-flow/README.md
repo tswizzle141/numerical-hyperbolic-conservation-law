@@ -33,3 +33,6 @@ $$u(x,0) = 0$$
 $$p(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
                         0.1 \ \ \ x \geq 0.5
 \end{cases}$$
+
+# 3. MUSCL Scheme
+# 4. WENO Scheme
