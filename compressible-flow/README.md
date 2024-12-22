@@ -13,4 +13,5 @@
 
 # 2. Problem on Compressible Flows
 ## 2.1. Problem Statement (Sod's Shock Tube Problem - 1D Compressible Flow)
+$$\frac{\partial}{\partial t}$$
 ## 2.2. Step-by-step solution
