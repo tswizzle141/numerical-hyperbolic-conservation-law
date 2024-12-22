@@ -13,5 +13,11 @@
 
 # 2. Problem on Compressible Flows
 ## 2.1. Problem Statement (Sod's Shock Tube Problem - 1D Compressible Flow)
-$$\frac{\partial}{\partial t}$$
+$$\frac{\partial}{\partial t} \begin{bmatrix} \rho\\
+\rho u\\
+E\\
+\end{bmatrix} + \frac{\partial}{\partial x} \begin{bmatrix} \rho u\\
+\rho u^2+p\\
+u(E+p)\\
+\end{bmatrix}=0$$
 ## 2.2. Step-by-step solution
