@@ -20,4 +20,5 @@ E\\
 \rho u^2+p\\
 u(E+p)\\
 \end{bmatrix}=0$$
+where $\rho$ is density, $u$ is velocity, $p$ is pressure, $E=\frac{p}{\gamma-1}+\frac{1}{2}\rho u^2$ is total energy per unit volume, with $\gamma$ is specific ratio.
 ## 2.2. Step-by-step solution
