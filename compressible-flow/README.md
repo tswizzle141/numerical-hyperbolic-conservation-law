@@ -5,4 +5,12 @@
 - Finite Volume Formulation: The Godunov scheme is typically implemented in a finite volume framework, where the fluxes across the boundaries of each control volume are computed to update the cell-averaged values.
 - First-Order Accuracy
 - Upwind Nature
-  
+## 1.2. Properties
+- Governed by conservation law
+- Capture shock waves and discontinuities without introducing spurious oscillations
+- Stable under CFL condition
+- 1st-order Godunov scheme is monotone
+
+# 2. Problem on Compressible Flows
+## 2.1. Problem Statement (Sod's Shock Tube Problem - 1D Compressible Flow)
+## 2.2. Step-by-step solution
