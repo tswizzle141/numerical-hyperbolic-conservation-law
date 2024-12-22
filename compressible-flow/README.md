@@ -23,3 +23,6 @@ u(E+p)\\
 
 where $\rho$ is density, $u$ is velocity, $p$ is pressure, $E=\frac{p}{\gamma-1}+\frac{1}{2}\rho u^2$ is total energy per unit volume, with $\gamma$ is specific ratio.
 ## 2.2. Step-by-step solution
+* Step 1: Domain discretization
+Divide domain into $N$ cells with spatial step size $\Delta x$. 
+* 
