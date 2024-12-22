@@ -26,4 +26,10 @@ where $\rho$ is density, $u$ is velocity, $p$ is pressure, $E=\frac{p}{\gamma-1}
 * Step 1: Domain discretization
 Divide domain into $N$ cells with spatial step size $\Delta x$. 
 * 
-$$\begin{aligned} \rho(x, 0) &= \begin{cases} 1, & x < 0.5, \\ 0.125, & x \geq 0.5, \end{cases} \\ u(x, 0) &= 0, \quad p(x, 0) = \begin{cases} 1, & x < 0.5, \\ 0.1, & x \geq 0.5. \end{cases} \end{aligned}$$
+$$\rho(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
+                          0.125 \ \ \ x \geq 0.5
+\end{cases}$$
+$$u(x,0) = 0$$
+$$p(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
+                        0.1 \ \ \ x \geq 0.5
+\end{cases}$$
