@@ -28,6 +28,7 @@ Divide domain into $N$ cells with spatial step size $\Delta x$. Let cell average
 $$U_i^n = \frac{1}{\Delta x} \displaystyle\int_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}} U(x,t^n)dx$$ where $U=[\rho, \rho u, E]^T$ is conserved variables. 
 * Step 2: Solve Riemann problem
 At each cell interface $x_{i+\frac{1}{2}}$, solve Riemann problem to determine the flux $F_{i+\frac{1}{2}}^n$:
+
 $$F=\begin{cases} \rho u \\
                   \rho u^2+p \\
                   u(E+p)
