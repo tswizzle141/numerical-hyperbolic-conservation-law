@@ -63,6 +63,27 @@ $$p(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
 - Velocity: A jump in velocity across the contact discontinuity is observed.
 - Pressure: The pressure remains constant across the contact discontinuity but shows a jump across the shock.
 ![Plot](godunov-figure.jpg)
+### 2.4.1. Density Plot $(\rho)$
+Density diagram shows three distinct regions separated by a shock wave, a contact discontinuity, and a rarefaction wave:
+- Rarefaction Wave (leftmost region): The density decreases smoothly as the rarefaction wave propagates to the left.
+- Contact Discontinuity (middle region): A sharp jump in density separates the left and right states. This is not a true shock wave, as it involves only a discontinuity in density, not pressure or velocity.
+- Shock Wave (rightmost region): The shock causes a sharp increase in density, moving to the right.
+
+Initially, the density is 1.0 on the left and 0.125 on the right. Over time, the shock propagates to the right, compressing the gas and increasing the density behind the shock. The rarefaction wave expands to the left, decreasing the density in that region.
+### 2.4.2. Velocity Plot $(u)$
+Velocity diagram demonstrates the motion of the fluid caused by the pressure difference between the left and right sides of the tube. It transitions across three main regions:
+- Left Side of the Rarefaction Wave: The fluid velocity is near zero (as it was initially stationary).
+- Contact Discontinuity: It rises sharply due to the flow of gas from the high-pressure left region to the low-pressure right region.
+- Right Side of the Shock: It drops slightly but remains constant behind the shock.
+
+Initially, the velocity is 0 everywhere since the fluid is at rest. As the system evolves, the velocity increases in the rarefaction region and remains constant between the contact discontinuity and the shock.
+### 2.4.3. Pressure Plot $(p)$
+Pressure diagram represents how the pressure equilibrates due to the propagation of waves:
+- Rarefaction Wave (leftmost region): The pressure decreases smoothly due to the expansion of the gas in the rarefaction region.
+- Contact Discontinuity: The pressure remains constant across the contact discontinuity, as this is a property of solutions to the Euler equations.
+- Shock Wave (rightmost region): The pressure increases sharply across the shock, reflecting the compression of the gas.
+
+Initially, the pressure is 1.0 on the left and 0.1 on the right. Over time, the shock wave compresses the gas, leading to a significant increase in pressure behind the shock. The rarefaction wave reduces the pressure on the left side as it expands outward.
 
 # 3. MUSCL Scheme
 ## 3.1. Definition
