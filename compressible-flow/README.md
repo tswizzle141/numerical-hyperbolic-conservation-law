@@ -62,5 +62,15 @@ MUSCL (Monotonic Upstream-centered Schemes for Conservation Laws) scheme is a hi
 * Step 1: Reconstruction of the variables at the cell interfaces using a piecewise linear approximation.
 * Step 2: Godunov's scheme is applied to the flux calculation using the reconstructed values.
 * Step 3: Use of a second-order accurate time-stepping method.
+## 3.3. Difference between MUSCL and Godunov
+* About basic concept:
+- Godunov Scheme: Godunov scheme is a first-order method. Computing fluxes at cell interfaces by solving the Riemann problem for each pair of neighboring cells. The solution at each cell interface is taken as the value of the conservative variables at the left or right state, resulting in a piecewise constant approximation.
+- MUSCL Scheme: MUSCL scheme is a higher-order method (typically second-order accurate in space and time). Improving upon the Godunov scheme by reconstructing the cell-averaged values at the interfaces, using a piecewise linear reconstruction. The reconstruction is done using the information from neighboring cells, allowing for better resolution of shocks and smooth regions, thus reducing numerical diffusion.
+* Solution reconstruction:
+- Godunov Scheme: Solution is assumed to be piecewise constant within each cell. The value of the solution at the interface is simply taken as the value of the cell-averaged variable, either from the left or the right state; which results in a first-order accurate solution, meaning the shock and other discontinuities are captured but are somewhat smeared out.
+- MUSCL Scheme: Reconstructing the solution at each interface using a piecewise linear approximation of the conserved variables. This is done by using the cell-centered values and the differences between them to generate a linear profile across the cell; which gives a higher-order approximation of the solution and results in a more accurate capture of shock waves and smooth regions.
+* Shock Capturing and Numerical Diffusion:
+- Godunov Scheme: Quite good at capturing shocks, but since it uses piecewise constant values, it tends to exhibit numerical diffusion, especially in smooth regions. The shock will be captured as a discontinuity, but the smooth regions may become diffused and inaccurate.
+- MUSCL Scheme: Improving shock capturing by using a higher-order representation (linear reconstruction), which reduces numerical diffusion in smooth regions. The shock is sharper and the smooth regions are better resolved.
 
 # 4. WENO Scheme
