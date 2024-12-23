@@ -39,6 +39,9 @@ $$U_i^{n+1}=U_i^n-\frac{\Delta t}{\Delta x}\Big(F_{i+\frac{1}{2}}^n-F_{i-\frac{1
 
 where $\Delta t$ satisfies CFL condition: $\Delta t \le \frac{\Delta x}{\max(|u|+c)}$ with $c=\sqrt{\frac{\gamma p}{\rho}}$ speed of sound. 
 
+It means that numerically,
+* Step 0: Setting initial conditions of Sod's Shock Tube Problem. Domain $x \in [0,1]$, dividing into $N$ cells:
+
 $$\rho(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
                           0.125 \ \ \ x \geq 0.5
 \end{cases}$$
@@ -46,6 +49,11 @@ $$u(x,0) = 0$$
 $$p(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
                         0.1 \ \ \ x \geq 0.5
 \end{cases}$$
+
+* Step 1: Compute initial cell averages for $U_i^n=[\rho_i, \rho_i u_i, E_i]^T$
+* Step 2: Solve Riemann problem to find the flux $F_{i+\frac{1}{2}}^n$
+* Step 3: Update conserved variables
+* Step 4: loop via several epoches
 
 # 3. MUSCL Scheme
 # 4. WENO Scheme
