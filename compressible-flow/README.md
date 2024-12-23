@@ -32,6 +32,7 @@ At each cell interface $x_{i+\frac{1}{2}}$, solve Riemann problem to determine t
 $$p(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
                         0.1 \ \ \ x \geq 0.5
 \end{cases}$$
+
 The Riemann solver uses $U_L, U_R$ states at the interface.
 * Step 3: Update the Conserved Quantities $$U_i^{n+1}=U_i^n-\frac{\Delta t}{\Delta x}\Big(F_{i+\frac{1}{2}}^n-F_{i-\frac{1}{2}}^n \Big)$$
 * 
