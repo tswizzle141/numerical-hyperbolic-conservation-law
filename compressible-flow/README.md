@@ -62,6 +62,7 @@ $$p(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
 - Density: A sharp discontinuity forms at the shock front, with a contact discontinuity and a rarefaction wave.
 - Velocity: A jump in velocity across the contact discontinuity is observed.
 - Pressure: The pressure remains constant across the contact discontinuity but shows a jump across the shock.
+![Plot](godunov-figure.jpg)
 
 # 3. MUSCL Scheme
 ## 3.1. Definition
