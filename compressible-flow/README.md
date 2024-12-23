@@ -54,6 +54,10 @@ $$p(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
 * Step 2: Solve Riemann problem to find the flux $F_{i+\frac{1}{2}}^n$
 * Step 3: Update conserved variables
 * Step 4: loop via several epoches
+## 2.3. Code
+- Initial conditions: Sod's shock tube problem is initialized with higher density, pressure on the left side $(x<0.5)$ and lower density, pressure on the right side $(x \ge 0.5)$.
+- Conservative variable $(U=[\rho, \rho u, E])$ are updated each time step.
+- HLLC flux function computed the intercell flux using approximate wave speeds $(S_L, S_R, S^*)$ and conservative quantities by finite-volumn approach.
 
 # 3. MUSCL Scheme
 ## 3.1. Definition
