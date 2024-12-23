@@ -11,4 +11,12 @@ with $\rho$ is density, $u$ is velocity, $p$ is pressure, $E=\rho e+\frac{1}{2}\
 
 # 2. Lax-Wendroff Scheme
 Lax-Wendroff scheme is a second-order numerical method solving hyperbolic PDEs, combining Taylor expansion with FDM. For conserved variable $U(x,t)$, this scheme uses a second-order Taylor expansion in time:
+
 $$U_i^{n+1}=U_i^n + \Delta t \frac{\partial U}{\partial t} + \frac{\Delta t^2}{2}\frac{\partial^2 U}{\partial t^2}$$
+
+# 3. Solve Raider-Parker problem step-by-step
+* Step 1: Define initial conditions for density $\rho$, velocity $u$, pressure $p$ in the domain. In this problem domain is often divided into 2 regions:
+  - Left region: High density and pressure
+  - Right region: Low density and pressure
+* Step 2: Discretization
+Divide spatial domain with step size $\Delta x$, choose time step $\Delta t$ based on CFL condition: $\Delta t=\text{CFL} \cdot \frac{\Delta x}{\max(|u|+c)}$ where $c=\sqrt{\frac{\gamma p}{\rho}}$
