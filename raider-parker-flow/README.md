@@ -34,3 +34,13 @@ Compute the intermediate state at half-time steps $U_{i+\frac{1}{2}}^{n+\frac{1}
 $$U_{i+\frac{1}{2}}^{n+\frac{1}{2}} = \frac{U_i^n+U_{i+1}^n}{2} - \frac{\Delta t}{2\Delta x}[F(U_{i+1})-F(U_i)]$$
 
 * Step 5: Corrector step
+Using predicted values to update solution:
+
+$$U_{i+1}^n = U_i^n - \frac{\Delta t}{\Delta x}\Big(F_{i+\frac{1}{2}}^{n+\frac{1}{2}}-F_{i-\frac{1}{2}}^{n+\frac{1}{2}} \Big)$$
+
+* Step 6: Update Primitive Variables (density, velocity, pressure, total energy)
+
+
+
+
+
