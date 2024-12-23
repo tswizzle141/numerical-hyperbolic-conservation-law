@@ -80,3 +80,10 @@ WENO (Weighted Essentially Non-Oscillatory) scheme is a high-order finite differ
 * Step 1: Reconstructing the solution at the interfaces using a weighted combination of multiple candidate stencils. It assigns higher weights to smoother regions and lower weights to regions near discontinuities.
 * Step 2: Computing flux based on the reconstructed values at the interfaces.
 * Step 3: Updating solution using the finite volume method, ensuring the conservation of mass, momentum, and energy.
+## 4.3. Difference between MUSCL and WENO schemes
+* Reconstruction:
+  - MUSCL Scheme: Extending the Godunov scheme to higher-order accuracy by piecewise linear reconstruction of the solution in each cell. It uses slope limiters to prevent oscillations near discontinuities, ensuring monotonicity of the solution. The scheme interpolates the solution to reconstruct the left and right states at cell interfaces.
+  - WENO Scheme: Using nonlinear weighted combinations of multiple stencils to achieve high-order accuracy. They reconstruct the solution using polynomials from several candidate stencils. Weights are chosen adaptively based on smoothness indicators to avoid oscillations near discontinuities while maintaining high-order accuracy in smooth regions.
+* Discontinuities Handling:
+- MUSCL Scheme: Slope limiters are explicitly used to handle discontinuities and ensure that the reconstructed solution remains monotonic; which may lead to a slight reduction in accuracy or excessive diffusion near shocks or discontinuities.
+- WENO Scheme: Suppressing oscillations near discontinuities by adjusting the weights of the stencils based on smoothness indicators; which results in better shock resolution and less numerical dissipation compared to MUSCL.
