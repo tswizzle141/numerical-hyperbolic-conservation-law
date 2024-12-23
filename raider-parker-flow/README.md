@@ -40,7 +40,22 @@ $$U_{i+1}^n = U_i^n - \frac{\Delta t}{\Delta x}\Big(F_{i+\frac{1}{2}}^{n+\frac{1
 
 * Step 6: Update Primitive Variables (density, velocity, pressure, total energy)
 
-
-
-
-
+# 4. Result explanation
+## 4.1. Result
+![lax-wendroff](lax-wendroff-figure.jpg)
+### 4.1.1. Density
+- Shock Waves: The steep region is due to the high compression of fluid from the initial pressure and density jump. Lax-Wendroff resolves this but may exhibit slight oscillations near the shock due to its dispersive nature.
+- Expansion Fan: The gradual slope arises as rarefaction waves spread the low-pressure region to the right.
+- Contact Discontinuity: There may be a distinct "kink" in density, separating two regions without a change in velocity or pressure.
+### 4.1.2. Velocity
+- The velocity field captures the flow movement initiated by the pressure difference. Initially stationary regions are set into motion, creating regions of high and low velocities.
+- Near the shock, the steep gradient indicates the rapid velocity change. The Lax-Wendroff scheme handles this transition moderately well but may introduce small oscillations.
+- In the expansion fan, the velocity gradually increases (or decreases), as expected for rarefaction waves.
+### 4.1.3. Pressure
+- Shock Region: The pressure exhibits a steep gradient, representing the compressive effects of the shock. Oscillations may appear near this steep gradient due to the numerical dispersive properties of Lax-Wendroff.
+- Expansion Fan: Pressure gradually decreases as the rarefaction waves reduce the density and internal energy of the fluid.
+- Downstream Region: A nearly constant pressure indicates the uniformity achieved after the waves propagate away.
+## 4.2. Observations
+- Numerical Oscillations: Near the sharp discontinuities (shock and contact), small oscillations might appear in all three variables. This is a known limitation of the Lax-Wendroff scheme, which can be mitigated by using more advanced schemes like MUSCL or WENO.
+- Resolution of Shock and Rarefaction: The shock wave is resolved sharply but not as well as higher-order schemes like WENO or Godunov with exact Riemann solvers. The expansion fan is smooth and well-resolved, showing the second-order accuracy of the scheme.
+- Conservation Properties: Total mass, momentum, and energy are conserved globally, although small numerical errors may arise due to the finite difference approximations.
