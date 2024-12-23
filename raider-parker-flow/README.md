@@ -28,4 +28,9 @@ $$F(U) = \begin{bmatrix} \rho u\\
         (E+p)u
         \end{bmatrix}$$
 
-* Step 4: 
+* Step 4: Predictor step
+Compute the intermediate state at half-time steps $U_{i+\frac{1}{2}}^{n+\frac{1}{2}}$ using:
+
+$$U_{i+\frac{1}{2}}^{n+\frac{1}{2}} = \frac{U_i^n+U_{i+1}^n}{2} - \frac{\Delta t}{2\Delta x}[F(U_{i+1})-F(U_i)]$$
+
+* Step 5: Corrector step
