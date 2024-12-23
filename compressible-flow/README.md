@@ -29,13 +29,15 @@ $$U_i^n = \frac{1}{\Delta x} \displaystyle\int_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1
 * Step 2: Solve Riemann problem
 At each cell interface $x_{i+\frac{1}{2}}$, solve Riemann problem to determine the flux $F_{i+\frac{1}{2}}^n$:
 
-$$F=\begin{cases} \rho u \\
+$$F=\begin{bmatrix} \rho u \\
                   \rho u^2+p \\
-                  u(E+p) \end{cases}$$
+                  u(E+p) \end{bmatrix}$$
 
 The Riemann solver uses $U_L, U_R$ states at the interface.
-* Step 3: Update the Conserved Quantities $$U_i^{n+1}=U_i^n-\frac{\Delta t}{\Delta x}\Big(F_{i+\frac{1}{2}}^n-F_{i-\frac{1}{2}}^n \Big)$$
-* 
+* Step 3: Update the Conserved Quantities
+$$U_i^{n+1}=U_i^n-\frac{\Delta t}{\Delta x}\Big(F_{i+\frac{1}{2}}^n-F_{i-\frac{1}{2}}^n \Big)$$
+
+where $\Delta t$ satisfies CFL condition: $\Delta t \le \frac{\Delta x}{\max(|u|+c)}$ with $c=\sqrt{\frac{\gamma p}{\rho}}$ speed of sound. 
 
 $$\rho(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
                           0.125 \ \ \ x \geq 0.5
