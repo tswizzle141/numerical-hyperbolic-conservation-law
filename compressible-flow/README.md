@@ -103,6 +103,7 @@ MUSCL (Monotonic Upstream-centered Schemes for Conservation Laws) scheme is a hi
   - Godunov Scheme: Quite good at capturing shocks, but since it uses piecewise constant values, it tends to exhibit numerical diffusion, especially in smooth regions. The shock will be captured as a discontinuity, but the smooth regions may become diffused and inaccurate.
   - MUSCL Scheme: Improving shock capturing by using a higher-order representation (linear reconstruction), which reduces numerical diffusion in smooth regions. The shock is sharper and the smooth regions are better resolved.
 ## 3.4. Result
+![Plot](muscl-figure.jpg)
 ### 3.4.1. Density Plot $(\rho)$
 - Rarefaction Wave: The density smoothly decreases from the left side toward the contact discontinuity. The transition is resolved with higher accuracy due to the second-order spatial reconstruction.
 - Contact Discontinuity: A sharp but accurately resolved jump in density is observed at the middle of the domain. The steepness of the discontinuity is preserved, showing minimal numerical diffusion compared to the Godunov scheme.
