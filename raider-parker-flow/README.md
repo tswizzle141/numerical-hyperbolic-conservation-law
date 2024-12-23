@@ -22,6 +22,7 @@ $$U_i^{n+1}=U_i^n + \Delta t \frac{\partial U}{\partial t} + \frac{\Delta t^2}{2
 Divide spatial domain with step size $\Delta x$, choose time step $\Delta t$ based on CFL condition: $\Delta t=\text{CFL} \cdot \frac{\Delta x}{\max(|u|+c)}$ where $c=\sqrt{\frac{\gamma p}{\rho}}$.
 * Step 3: Compute flux
 Use Euler function to define flux vector $F(U)$:
+
 $$F(U) = \begin{bmatrix} \rho u\\
         \rho u^2+p\\
         (E+p)u
