@@ -62,7 +62,7 @@ MUSCL (Monotonic Upstream-centered Schemes for Conservation Laws) scheme is a hi
 * Step 1: Reconstruction of the variables at the cell interfaces using a piecewise linear approximation.
 * Step 2: Godunov's scheme is applied to the flux calculation using the reconstructed values.
 * Step 3: Use of a second-order accurate time-stepping method.
-## 3.3. Difference between MUSCL and Godunov
+## 3.3. Difference between MUSCL and Godunov schemes
 * About basic concept:
   - Godunov Scheme: Godunov scheme is a first-order method. Computing fluxes at cell interfaces by solving the Riemann problem for each pair of neighboring cells. The solution at each cell interface is taken as the value of the conservative variables at the left or right state, resulting in a piecewise constant approximation.
   - MUSCL Scheme: MUSCL scheme is a higher-order method (typically second-order accurate in space and time). Improving upon the Godunov scheme by reconstructing the cell-averaged values at the interfaces, using a piecewise linear reconstruction. The reconstruction is done using the information from neighboring cells, allowing for better resolution of shocks and smooth regions, thus reducing numerical diffusion.
@@ -74,3 +74,9 @@ MUSCL (Monotonic Upstream-centered Schemes for Conservation Laws) scheme is a hi
   - MUSCL Scheme: Improving shock capturing by using a higher-order representation (linear reconstruction), which reduces numerical diffusion in smooth regions. The shock is sharper and the smooth regions are better resolved.
 
 # 4. WENO Scheme
+## 4.1. Definition
+WENO (Weighted Essentially Non-Oscillatory) scheme is a high-order finite difference method commonly used to solve conservation laws. It is designed to resolve sharp gradients (such as shock waves) and avoid oscillations in smooth regions, making it ideal for problems involving discontinuities.
+## 4.2. Key Steps for WENO Scheme
+* Step 1: Reconstructing the solution at the interfaces using a weighted combination of multiple candidate stencils. It assigns higher weights to smoother regions and lower weights to regions near discontinuities.
+* Step 2: Computing flux based on the reconstructed values at the interfaces.
+* Step 3: Updating solution using the finite volume method, ensuring the conservation of mass, momentum, and energy.
