@@ -56,4 +56,11 @@ $$p(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
 * Step 4: loop via several epoches
 
 # 3. MUSCL Scheme
+## 3.1. Definition
+MUSCL (Monotonic Upstream-centered Schemes for Conservation Laws) scheme is a higher-order finite difference method that improves upon the first-order Godunov scheme by using a linear reconstruction of the conserved variables at each cell interface; which allows for better resolution of shocks and smooth regions, reducing numerical diffusion.
+## 3.2. Key Steps for MUSCL Scheme
+* Step 1: Reconstruction of the variables at the cell interfaces using a piecewise linear approximation.
+* Step 2: Godunov's scheme is applied to the flux calculation using the reconstructed values.
+* Step 3: Use of a second-order accurate time-stepping method.
+
 # 4. WENO Scheme
