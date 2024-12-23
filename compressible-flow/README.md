@@ -58,6 +58,10 @@ $$p(x,0) = \begin{cases} 1 \ \ \ x < 0.5 \\
 - Initial conditions: Sod's shock tube problem is initialized with higher density, pressure on the left side $(x<0.5)$ and lower density, pressure on the right side $(x \ge 0.5)$.
 - Conservative variable $(U=[\rho, \rho u, E])$ are updated each time step.
 - HLLC flux function computed the intercell flux using approximate wave speeds $(S_L, S_R, S^*)$ and conservative quantities by finite-volumn approach.
+## 2.4. Result
+- Density: A sharp discontinuity forms at the shock front, with a contact discontinuity and a rarefaction wave.
+- Velocity: A jump in velocity across the contact discontinuity is observed.
+- Pressure: The pressure remains constant across the contact discontinuity but shows a jump across the shock.
 
 # 3. MUSCL Scheme
 ## 3.1. Definition
